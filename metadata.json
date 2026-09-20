@@ -1,0 +1,6 @@
+{
+  "name": "Wardin - Discord Portfolio",
+  "description": "Premium dark blue Discord developer portfolio for Wardin (itzwardin09), specializing in hosting, DDoS protection, and Minecraft server DDoS protection with animated Minecraft backgrounds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

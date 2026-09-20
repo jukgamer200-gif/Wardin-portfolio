@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-pixel: 'Silkscreen', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #05070d;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom glowing effects & animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.35), 0 0 45px rgba(6, 182, 212, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(59, 130, 246, 0.6), 0 0 70px rgba(6, 182, 212, 0.4);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverseSpin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverseSpin 25s linear infinite;
+}
+
+/* Glassmorphism styles */
+.glass-panel {
+  background: rgba(10, 15, 26, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(13, 20, 36, 0.85);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.25);
+}
+
+.glass-card-dark {
+  background: rgba(7, 10, 18, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+/* Minecraft pixelated text utility */
+.font-pixel {
+  font-family: 'Silkscreen', monospace, cursive;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060810;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
